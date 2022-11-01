@@ -6,7 +6,7 @@ const imageLoader = ({ src }) => {
     return `http://localhost:3000/${src}`;
 };
 import Router from 'next/router';
-export default function SingUp(){
+export default function SingUp({imageLoader}){
     useEffect(() => {
         async function InfoLogin(){
             const cookies = parseCookies();
@@ -115,7 +115,7 @@ export default function SingUp(){
                 <div>
                     <Image
                         loader={imageLoader}
-                        src="book.svg"
+                        src="/book.svg"
                         alt="Picture of the author"
                         width={600}
                         height={600}

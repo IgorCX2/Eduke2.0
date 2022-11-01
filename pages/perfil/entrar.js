@@ -7,7 +7,7 @@ var jwt = require('jsonwebtoken');
 const imageLoader = ({ src }) => {
     return `http://localhost:3000/${src}`;
 };
-export default function SingIn(){
+export default function SingIn({imageLoader}){
     useEffect(() => {
         async function InfoLogin(){
             const cookies = parseCookies();
@@ -84,7 +84,7 @@ export default function SingIn(){
                 <div>
                     <Image
                         loader={imageLoader}
-                        src="book.svg"
+                        src="/book.svg"
                         alt="Picture of the author"
                         width={600}
                         height={600}
