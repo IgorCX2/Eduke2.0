@@ -13,6 +13,7 @@ export default function PlanStudy({imageLoader}){
         id: '',
         nick: ''
     })
+    const [infoSaude, setInfoSaude] = useState('A')
     useEffect(()=>{
         async function InfoLogin(){
             const cookies = parseCookies();
@@ -55,13 +56,14 @@ export default function PlanStudy({imageLoader}){
                     </div>
                 </div>
             </section>
+            {infoSaude == "A" ? 
             <section className='flex justify-evenly	mt-12 items-center'>
                 <div className='flex flex-col max-w-md w-full'>
                     <h1 className='text-4xl font-bold'>Lembre-se</h1>
                     <h2 className='mt-10'>frase motivacional atudalizada diariamente aqui. Ou é burro(a) ou é feio(a). Seja so feio(a) =) Não tenha medo de mudar. Seja de trabalho, de curso, de carreira... Se você não se sente bem com o que está fazendo, provavelmente é porque deveria estar fazendo outra coisa. Só você sabe de verdade o que é melhor para você e ninguem pode de  julgar!</h2>
                     <div className='flex justify-between'>
                     <Link href="/" className="rounded-lg bg-blue-500 text-white p-2 font-bold py-2.5 px-4 text-center mt-10">Voce pode me ajudar?</Link>
-                    <Link href="/" className="rounded-lg border p-2 font-bold py-2.5 px-4 text-center mt-10">Fechar</Link>
+                    <button onClick={() => setInfoSaude('N')} className="rounded-lg border p-2 font-bold py-2.5 px-4 text-center mt-10">Fechar</button>
                     </div>
                 </div>
                 <div className='relative flex items-end	'>
@@ -73,6 +75,55 @@ export default function PlanStudy({imageLoader}){
                     />
                 </div>
             </section>
+            :
+            <section className="flex mt-16 gap-14 justify-between">
+                <div className="flex gap-14">
+                    <div className="flex flex-col gap-14">
+                        <div className="border rounded-lg w-80 py-3.5 relative">
+                            <div className="absolute -top-8 -right-4">
+                                <Image loader={imageLoader} src="/hard.svg" alt="Picture of the author" width={100} height={10}/>
+                            </div>
+                            <div className="px-5 py-2">
+                                <h1 className="text-gray-300 font-medium">Materias que eu mando bem:</h1>
+                                <p className="text-lg">Biologia Biologia</p>
+                            </div>
+                        </div>
+                        <div className="border rounded-lg w-80 py-3.5 relative">
+                            <div className="absolute -top-10 right-0">
+                                <Image loader={imageLoader} src="/espada.svg" alt="Picture of the author" width={50} height={50}/>
+                            </div>
+                            <div className="px-5 py-2">
+                                <h1 className="text-gray-300 font-medium">Materias que eu mando bem:</h1>
+                                <p className="text-lg">Biologia Biologia</p>
+                            </div>
+                        </div>
+                        <div className="border rounded-lg w-80 py-3.5 relative">
+                            <div className="absolute -top-10 right-0">
+                                <Image loader={imageLoader} src="/watch.svg" alt="Tempo estudado hoje" width={60} height={60}/>
+                            </div>
+                            <div className="px-5 py-2">
+                                <h1 className="text-gray-300 font-medium">Materias que eu mando bem:</h1>
+                                <p className="text-lg">19h30m20s</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="border rounded-lg w-64 relative flex flex-col-reverse justify-between items-center py-5 gap-2">
+                        <strong>0</strong>
+                        <div className="w-12 h-full bg-bluelight relative">
+                            <div className="w-12 h-20 bg-gray-200 absolute"></div>
+                        </div>
+                        <div className="flex flex-col text-center">
+                            <Image loader={imageLoader} src="/chest.svg" alt="Picture of the author" width={80} height={80}/>
+                            <strong>100</strong>
+                        </div>
+                    </div>
+                </div>                   
+                <div className='w-full relative'>
+                    <Image loader={imageLoader} src="/capa.svg" alt="Picture of the author" fill={true}/>
+                </div>
+            </section>
+            }
+
             <section className='bg-gray-200 w-full text-white py-5 rounded-xl px-10 mt-14'>
                 propaganda...
             </section>
