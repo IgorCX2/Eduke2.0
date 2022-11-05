@@ -62,9 +62,13 @@ export default function SingUp({imageLoader}){
                     }
 
                 }else{
+
                     setResponse({
                         type: 'loading',
                         mensagem: 'CADASTRANDO EM'
+                    })
+                    const addnivel = await fetch(`https://eduke20.vercel.app/api/userconfig/cad-nivel`,{
+                        method: 'POST',
                     })
                     try{
                         const res = await fetch('https://eduke20.vercel.app/api/userconfig/cad-user', {

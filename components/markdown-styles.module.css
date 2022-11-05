@@ -1,0 +1,19 @@
+.markdown {
+  @apply leading-relaxed;
+}
+
+.markdown h2 {
+  @apply text-3xl mb-4 leading-snug;
+}
+
+.markdown h3 {
+  @apply text-2xl mb-4 leading-snug;
+}
+
+.markdown table {
+  @apply border-collapse border-spacing-0 m-auto;
+}
+
+.markdown th,.markdown td {
+  @apply p-2 border-solid border border-gray-200;
+}
