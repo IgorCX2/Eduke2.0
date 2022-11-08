@@ -146,9 +146,13 @@ export default function PlainStudy(props){
     )
 }
 export async function getStaticPaths(){
-    return { paths: [], fallback: true }
+    return { paths: [{params: {
+        materia: 'matematica',
+        conteudo: 'soma'
+    }}], 
+        fallback: true }
 }
-
+console.log
 export async function getStaticProps(context)  {
     const conteudo = context.params.conteudo
     const materia = context.params.materia
