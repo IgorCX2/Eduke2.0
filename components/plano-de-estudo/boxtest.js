@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link';
 const imageLoader = ({ src }) => {
-    return `http://localhost:3000/${src}`;
+    return `https://eduke21.vercel.app/${src}`;
 };
 export default function BoxTest(props){
     return(

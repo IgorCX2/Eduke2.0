@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 const imageLoader = ({ src }) => {
-    return `http://localhost:3000/${src}`;
+    return `https://eduke21.vercel.app/${src}`;
 };
 import { useState, useEffect } from 'react'
 const ReactPlayer = dynamic(() => import("react-player/youtube"), { ssr: false });
@@ -118,11 +118,8 @@ export default function PlainStudy(props){
                                                             <div>
                                                                 <div className={`${markdownStyles['markdown']} ${squestion[0].split('²').length == 1 ? "text-left" : "text-center"}`} dangerouslySetInnerHTML={{ __html:qtdquestion.split('{')[0]}}/>
                                                                 <div className={`${markdownStyles['markdown']}  text-right text-sm`} dangerouslySetInnerHTML={{ __html:qtdquestion.split('{')[1]}}/>
-                                                            </div>
-
-                                                            
+                                                            </div> 
                                                         )
-
                                                     })}
                                                 </div>
                                                 {squestion.length > 0 ? <div className={`${markdownStyles['markdown']} text-lg text-left`} dangerouslySetInnerHTML={{ __html:squestion[1]}}/> : <div className={`${markdownStyles['markdown']}`} dangerouslySetInnerHTML={{ __html:squestion[0]}}/>}

@@ -5,7 +5,7 @@ import { parseCookies, setCookie } from 'nookies'
 import Router from 'next/router';
 var jwt = require('jsonwebtoken');
 const imageLoader = ({ src }) => {
-    return `http://localhost:3000/${src}`;
+    return `https://eduke21.vercel.app/${src}`;
 };
 export default function SingIn({imageLoader}){
     useEffect(() => {

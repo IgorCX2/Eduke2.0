@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { parseCookies, setCookie } from 'nookies'
 const imageLoader = ({ src }) => {
-    return `http://localhost:3000/${src}`;
+    return `https://eduke21.vercel.app/${src}`;
 };
 import Router from 'next/router';
 export default function SingUp({imageLoader}){

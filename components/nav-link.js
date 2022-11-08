@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 var jwt = require('jsonwebtoken');
 const { promisify } = require('util');
 const imageLoader = ({ src }) => {
-    return `http://localhost:3000/${src}`;
+    return `https://eduke21.vercel.app/${src}`;
 };
 export default function NavBar({imageLoader}){
     const [Stats, setStats] = useState()

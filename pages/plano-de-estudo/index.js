@@ -8,8 +8,9 @@ import BoxTest from '../../components/plano-de-estudo/boxtest';
 var jwt = require('jsonwebtoken');
 const { promisify } = require('util');
 const imageLoader = ({ src }) => {
-    return `http://localhost:3000/${src}`;
+    return `https://eduke21.vercel.app/${src}`;
 };
+
 export default function PlanStudy(props){
     const [Decodificado, setDecodificado] = useState({
         id: '',
@@ -75,7 +76,7 @@ export default function PlanStudy(props){
                             loader={imageLoader}
                             src="/usertest.svg"
                             alt="Picture of the author"
-                            width={200} height={200}
+                            width={200} height={200} 
                         />
                     </div>
                 </section>

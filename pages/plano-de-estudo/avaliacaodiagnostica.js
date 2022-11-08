@@ -9,7 +9,7 @@ import Router from 'next/router';
 import Container from '../../components/container'
 import { useState, useEffect } from "react";
 const imageLoader = ({ src }) => {
-    return `http://localhost:3000/${src}`;
+    return `https://eduke21.vercel.app/${src}`;
 };
 export default function Prova(props){
     const [iniciar, setInicio] = useState("N")

@@ -1,6 +1,6 @@
 import Image from "next/image";
 const imageLoader = ({ src }) => {
-    return `http://localhost:3000/${src}`;
+    return `https://eduke21.vercel.app/${src}`;
 };
 import { useState, useEffect } from "react";
 
