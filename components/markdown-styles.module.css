@@ -2,12 +2,28 @@
   @apply leading-relaxed;
 }
 
+.markdown h1 {
+  @apply text-7xl mb-16 leading-snug font-black;
+}
+
 .markdown h2 {
   @apply text-3xl mb-4 leading-snug;
 }
 
 .markdown h3 {
   @apply text-2xl mb-4 leading-snug;
+}
+
+.markdown p {
+  @apply text-lg mb-4 leading-snug text-left;
+}
+
+.markdown strong {
+  @apply text-xl mb-4 leading-snug text-center;
+}
+
+.markdown em {
+  @apply leading-snug mt-5 text-right text-sm;
 }
 
 .markdown table {

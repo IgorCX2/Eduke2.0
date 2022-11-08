@@ -1,7 +1,19 @@
 import fs from 'fs';
 import grayMatter from 'gray-matter';
 export function getContents(conteudo, materia){
-    const fileverific = fs.readdirSync(`./_content/PlanoDeEstudos/${materia}`).indexOf(`soma.md`);
-    console.log(fileverific)
-    return[]
+    try{
+        const fileContent = fs.readFileSync(`./_content/PlanoDeEstudos/${materia}/${conteudo}.md`, 'utf-8')
+        const { content, data: metadata } = grayMatter(fileContent);
+        var metadado = metadata
+        var conteu = content
+    }catch(err){
+        var metadado = "eroo"
+        var conteu ="erro"
+    }
+    return{
+        metadata:{
+            ...metadado, 
+        },
+        content: conteu
+    }
 }

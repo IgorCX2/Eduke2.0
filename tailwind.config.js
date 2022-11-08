@@ -30,6 +30,9 @@ module.exports = {
       maxHeight: {
         '3xl': '42rem',
       },
+      margin: {
+        '100': '450px',
+      }
     },
   },
   plugins: [],
