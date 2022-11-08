@@ -2,6 +2,8 @@ import markdownToHtml from '../../../script/markdownToHtml'
 import { getContents } from '../../../script/getContent'
 import markdownStyles from '../../../components/markdown-styles.module.css'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
+
 const imageLoader = ({ src }) => {
     return `http://localhost:3000/${src}`;
 };
@@ -9,6 +11,10 @@ import { useState, useEffect } from 'react'
 const ReactPlayer = dynamic(() => import("react-player/youtube"), { ssr: false });
 import dynamic from 'next/dynamic'
 export default function PlainStudy(props){
+    const router = useRouter()
+    if (router.isFallback) {
+        return <div>Loading...</div>
+    }
     const [countpage, SetCountPage] = useState(0)
     const [video, SetVideo] = useState(false)
     const namepages = props.carregarestudo.metadata.page.split(',')
@@ -140,20 +146,15 @@ export default function PlainStudy(props){
     )
 }
 export async function getStaticPaths(){
-    return{
-        paths: [],
-        fallback: 'blocking'
-    }
+    return { paths: [], fallback: true }
 }
 
 export async function getStaticProps(context)  {
     const conteudo = context.params.conteudo
     const materia = context.params.materia
-    const arrymateria = ['Matemática', 'Português', 'Biologia', 'Geografia', 'História', 'Química', 'Física', 'Filosofia',' Sociologia']
-    if(arrymateria.indexOf(materia) != 1){
         var carregarestudo = getContents(conteudo, materia);
         var markcontent = await markdownToHtml(carregarestudo.content || '')
-    }
+    
     return {
       props: {
         carregarestudo,
