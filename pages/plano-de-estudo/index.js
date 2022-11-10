@@ -36,7 +36,7 @@ export default function PlanStudy(props){
     
         return(
             <main className='mt-1'>
-                <section className='bg-blue-500 w-full flex justify-between text-white py-5 rounded-xl px-10'>
+                <section className='bg-blue-500 w-full flex justify-between text-white py-5 rounded-xl px-10 drop-shadow-n2xl'>
                     <div className='flex gap-5 items-center'>
                         <div className='bg-white p-10 rounded-full'>
     
@@ -62,7 +62,7 @@ export default function PlanStudy(props){
                     </div>
                 </section>
                 {infoSaude == "A" ? 
-                <section className='flex justify-evenly	mt-20 items-center'>
+                <section className='flex justify-evenly	mt-20 items-center '>
                     <div className='flex flex-col max-w-md w-full'>
                         <h1 className='text-4xl font-bold'>Lembre-se</h1>
                         <h2 className='mt-10'>frase motivacional atudalizada diariamente aqui. Ou é burro(a) ou é feio(a). Seja so feio(a) =) Não tenha medo de mudar. Seja de trabalho, de curso, de carreira... Se você não se sente bem com o que está fazendo, provavelmente é porque deveria estar fazendo outra coisa. Só você sabe de verdade o que é melhor para você e ninguem pode de  julgar!</h2>
@@ -84,7 +84,7 @@ export default function PlanStudy(props){
                 <section className="flex mt-16 gap-14 justify-between">
                     <div className="flex gap-14">
                         <div className="flex flex-col gap-14">
-                            <div className="border rounded-lg w-80 py-3.5 relative">
+                            <div className="rounded-lg w-80 py-3.5 relative bg-white drop-shadow-toxl">
                                 <div className="absolute -top-8 -right-4">
                                     <Image loader={imageLoader} src="/hard.svg" alt="Picture of the author" width={100} height={10}/>
                                 </div>
@@ -93,7 +93,7 @@ export default function PlanStudy(props){
                                     <p className="text-lg">Biologia Biologia</p>
                                 </div>
                             </div>
-                            <div className="border rounded-lg w-80 py-3.5 relative">
+                            <div className="rounded-lg w-80 py-3.5 relative bg-white drop-shadow-toxl">
                                 <div className="absolute -top-10 right-0">
                                     <Image loader={imageLoader} src="/espada.svg" alt="Picture of the author" width={50} height={50}/>
                                 </div>
@@ -102,7 +102,7 @@ export default function PlanStudy(props){
                                     <p className="text-lg">Biologia Biologia</p>
                                 </div>
                             </div>
-                            <div className="border rounded-lg w-80 py-3.5 relative">
+                            <div className="rounded-lg w-80 py-3.5 relative bg-white drop-shadow-toxl">
                                 <div className="absolute -top-10 right-0">
                                     <Image loader={imageLoader} src="/watch.svg" alt="Tempo estudado hoje" width={60} height={60}/>
                                 </div>
@@ -112,7 +112,7 @@ export default function PlanStudy(props){
                                 </div>
                             </div>
                         </div>
-                        <div className="border rounded-lg w-64 relative flex flex-col-reverse justify-between items-center py-5 gap-2">
+                        <div className="rounded-lg w-64 relative flex flex-col-reverse justify-between items-center py-5 gap-2 bg-white drop-shadow-toxl">
                             <strong>0</strong>
                             <div className="w-12 h-full bg-bluelight relative">
                                 <div className="w-12 h-20 bg-gray-200 absolute"></div>
@@ -141,8 +141,8 @@ export default function PlanStudy(props){
                                 )
                             })}
                         </div>
-                        <div className="flex flex-col gap-16 w-96">
-                            <div className="border rounded-lg w-full relative flex flex-col justify-between items-center py-5 gap-2">
+                        <div className="flex flex-col gap-16 w-96 ">
+                            <div className="rounded-lg w-full relative flex flex-col justify-between items-center py-5 gap-2 bg-white drop-shadow-toxl">
                                 <div className="absolute -top-10">
                                     <Image loader={imageLoader} src="/watch.svg" alt="Picture of the author" width={65} height={65}/>
                                 </div>

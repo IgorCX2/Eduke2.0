@@ -7,11 +7,11 @@
 }
 
 .markdown h2 {
-  @apply text-3xl mb-4 leading-snug;
+  @apply text-3xl mt-7 mb-2 leading-snug text-left;
 }
 
 .markdown h3 {
-  @apply text-2xl mb-4 leading-snug;
+  @apply text-xl mb-2 leading-snug text-left;
 }
 
 .markdown p {
@@ -19,7 +19,7 @@
 }
 
 .markdown strong {
-  @apply text-xl mb-4 leading-snug text-center;
+  @apply text-lg leading-snug text-center;
 }
 
 .markdown em {
@@ -28,6 +28,10 @@
 
 .markdown table {
   @apply border-collapse border-spacing-0 m-auto;
+}
+
+.markdown ul {
+  @apply leading-snug ml-10 mb-2 text-left list-none;
 }
 
 .markdown th,.markdown td {

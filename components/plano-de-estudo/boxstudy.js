@@ -23,7 +23,7 @@ export default function BoxStudy(props){
       if (isLoading) return <p>Loading...</p>
   if (!data) return <p>No profile data</p>
     return(
-        <div className='border max-h-36	h-full rounded-lg w-60 py-4 px-10 flex flex-col justify-between text-lg gap-7'>
+        <div className='max-h-36	h-full rounded-lg w-60 py-4 px-10 flex flex-col justify-between text-lg gap-7 bg-white drop-shadow-toxl'>
             <div className='gap-1 flex flex-col'>
                 <h1 className='font-bold text-lg'>{data.plainstudy}</h1>
                 <h2>{materia[statusplain.materia]}</h2>

@@ -23,7 +23,7 @@ module.exports = {
         xx: '100px',
       },
       dropShadow: {
-        'toxl': '0 20px 10px rgba(49, 200, 242, 0.5)',
+        'toxl': '0px 0px 20px rgb(0 0 0 / 0.1)',
         'tol': '0px 0px 10px rgb(0 0 0 / 1)',
         'n2xl': '0px 0px 20px rgb(0 0 0 / 0.15)'
       },
