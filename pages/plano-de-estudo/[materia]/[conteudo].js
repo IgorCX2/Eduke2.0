@@ -9,13 +9,13 @@ import { useRouter } from 'next/router'
 const imageLoader = ({ src }) => {
     return `https://eduke21.vercel.app/${src}`;
 };
-import { useState, useEffect } from 'react'
+import { useState, useEffect, cache } from 'react'
 const ReactPlayer = dynamic(() => import("react-player/youtube"), { ssr: false });
 import dynamic from 'next/dynamic'
 export default function PlainStudy(props){
     const router = useRouter()
     if (router.isFallback) {
-        return <div>Estamos Carregando os Seus dados personalizados =)...</div>
+        return <div>Não Encontramos nada =)...</div>
     }
     const [answer, SetAnswer] = useState({
         questao: '',
@@ -320,7 +320,7 @@ export default function PlainStudy(props){
                                                     <ReactPlayer url={alternativadoconsole[10]}  width='100%' height='100%' controls showinfo={0} playing={video == false ? false : video == valordp ? true : false} onPlay={() => SetVideo(valordp)}/>
                                                 </div>
                                             </section>
-                                         : ""}
+                                        : ""}
                                     </div>
                                 )
                             }
@@ -338,24 +338,21 @@ export default function PlainStudy(props){
         </div>
     )
 }
-export async function getStaticPaths(){
-    return { paths: [{params: {
-        materia: 'matematica',
-        conteudo: 'soma'
-    }}], 
-        fallback: true }
-}
+export async function getStaticPaths() {
+    return { paths: [], fallback: true }
+  }
 console.log
 export async function getStaticProps(context)  {
     const conteudo = context.params.conteudo
     const materia = context.params.materia
-        var carregarestudo = getContents(conteudo, materia);
-        var markcontent = await markdownToHtml(carregarestudo.content || '')
-    
+    const carregarestudo = getContents(conteudo, materia);
+    const markcontent = await markdownToHtml(carregarestudo.content || '')
+    const notFound = carregarestudo.content == "erro" ? true : false;
     return {
       props: {
         carregarestudo,
         markcontent
       },
+      notFound
     };
 }
